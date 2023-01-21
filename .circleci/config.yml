@@ -17,6 +17,16 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+    build: 
+      working_directory: ~/AOP-Microservices
+      docker:
+        - image: cimg/base:stable
+      steps:
+        - checkout
+        - run: java MicroserviceApplication
+    test:
+      working_directory: ~/AOP-Microservices
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
