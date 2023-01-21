@@ -23,14 +23,14 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run: java MicroserviceApplication
+      - run: MicroserviceApplication.java
   test: 
     working_directory: ~/AOP-Microservices
     docker:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run: java MicroserviceApplicationTest
+      - run: MicroserviceApplicationTest.java
 
 
 # Invoke jobs via workflows
