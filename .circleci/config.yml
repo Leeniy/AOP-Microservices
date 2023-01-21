@@ -24,6 +24,13 @@ jobs:
     steps:
       - checkout
       - run: java MicroserviceApplication
+  test: 
+    working_directory: ~/AOP-Microservices
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: java MicroserviceApplicationTest
 
 
 # Invoke jobs via workflows
@@ -32,3 +39,9 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requiers: 
+            - build
