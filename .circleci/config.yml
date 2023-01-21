@@ -20,14 +20,14 @@ jobs:
   build: 
     working_directory: ~/AOP-Microservices
     docker:
-      - image: cimg/base:stable
+      - image: cimg/openjdk:19.0.1
     steps:
       - checkout
-      - run: ./AOP-Microservice/Microservice/mvnw clean install 
+      - run: ./mvnw clean install 
   test: 
     working_directory: ~/AOP-Microservices
     docker:
-      - image: cimg/base:stable
+      - image: cimg/openjdk:19.0.1
     steps:
       - checkout
       - run: ./mvnw clean install 
