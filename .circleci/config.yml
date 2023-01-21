@@ -24,8 +24,6 @@ jobs:
     steps:
       - checkout
       - run: java MicroserviceApplication
-    test:
-      working_directory: ~/AOP-Microservices
 
 
 # Invoke jobs via workflows
